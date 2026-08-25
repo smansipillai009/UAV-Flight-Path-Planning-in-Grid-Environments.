@@ -33,17 +33,6 @@ cost (distance + energy lost/gained to wind) rather than raw distance.
   the frontier — the UAV can never legally enter them, unlike wind, which
   is a soft cost.
 
-## How to extend for later units
-- Unit II (knowledge representation): add airspace *rules* (e.g. altitude
-  bands, time-windows a zone is restricted) as a small rule/CSP layer on
-  top of the grid.
-- Unit III/IV (ML): learn a cost or wind-prediction model from real/simulated
-  flight data instead of hand-setting the wind field, then feed it into the
-  same `move_cost()` function — the search logic doesn't need to change.
-- Combined final project: chain these into one pipeline — ML predicts the
-  wind/cost field, A* plans the path through it, exactly like the
-  LunaProbe pipeline structure (perception/estimation -> search).
-
 ## Run it
 ```bash
 pip install numpy matplotlib
